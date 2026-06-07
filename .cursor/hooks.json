@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": ".cursor/hooks/session-start.sh",
+        "timeout": 15
+      }
+    ],
+    "postToolUse": [
+      {
+        "command": ".cursor/hooks/log-tool-use.sh",
+        "timeout": 5
+      }
+    ],
+    "stop": [
+      {
+        "command": ".cursor/hooks/agent-stop.sh",
+        "timeout": 10
+      }
+    ]
+  }
+}

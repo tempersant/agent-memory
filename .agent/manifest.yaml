@@ -1,0 +1,57 @@
+# Agent Bridge manifest — declarative config for all runtimes.
+# Run: .agent/bootstrap/install.sh
+
+version: 1
+
+# Files every agent must read at session start (order matters)
+agents:
+  read_first:
+    - AGENTS.md
+    - GEMINI.md
+    - .agent/HANDOFF.md
+    - .agent/state.json
+  antigravity:
+    - GEMINI.md
+    - .agent/rules/agent-bridge.md
+
+# Project skills (copied/symlinked into .cursor/skills/)
+skills:
+  - source: .cursor/skills/agent-bridge
+    scope: project
+
+# Optional personal skills from home dir (skipped if missing)
+  - source: ~/.cursor/skills/n8n-workflows
+    scope: personal
+    optional: true
+  - source: ~/.cursor/skills/scenari
+    scope: personal
+    optional: true
+
+# Cursor rules (already in repo — listed for bootstrap validation)
+rules:
+  - .cursor/rules/agent-bridge.mdc
+
+# MCP servers merged into project .cursor/mcp.json (secrets via env vars)
+mcp:
+  merge_into: .cursor/mcp.json
+  servers:
+    n8n-mcp:
+      command: npx
+      args: ["-y", "n8n-mcp"]
+      env:
+        N8N_API_URL: "${N8N_API_URL}"
+        N8N_API_KEY: "${N8N_API_KEY}"
+
+# Cursor marketplace plugins (install manually via Cursor → Settings → Plugins)
+plugins:
+  - slug: notion-workspace
+    optional: true
+  - slug: supabase
+    optional: true
+
+# Default process stages — customize per project in state.json
+default_stages:
+  - planning
+  - implementation
+  - review
+  - deploy

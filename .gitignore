@@ -1,0 +1,14 @@
+# Local bootstrap symlinks (personal skills — re-created by install.sh)
+.cursor/skills/n8n-workflows
+.cursor/skills/scenari
+
+# Generated at handoff time (optional per-session)
+.agent/ANTIGRAVITY_PROMPT.md
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store

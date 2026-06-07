@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "process_id": "default",
+  "stage": "planning",
+  "stages": {
+    "planning": {
+      "status": "pending",
+      "actor": null,
+      "at": null,
+      "notes": ""
+    },
+    "implementation": {
+      "status": "pending",
+      "actor": null,
+      "at": null,
+      "notes": ""
+    },
+    "review": {
+      "status": "pending",
+      "actor": null,
+      "at": null,
+      "notes": ""
+    },
+    "deploy": {
+      "status": "pending",
+      "actor": null,
+      "at": null,
+      "notes": ""
+    }
+  },
+  "active_agent": null,
+  "artifacts": {}
+}

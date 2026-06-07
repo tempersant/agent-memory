@@ -1,0 +1,25 @@
+---
+description: Agent Bridge handoff protocol — read and update .agent/ state on every session
+alwaysApply: true
+---
+
+# Agent Bridge
+
+This project uses a git-native handoff protocol. Follow it on every session.
+
+## Session start
+
+Read before any work:
+
+1. `.agent/HANDOFF.md`
+2. `.agent/state.json`
+
+## Session end
+
+Before finishing, update:
+
+1. `.agent/state.json` — stage status, actor, timestamp, artifacts
+2. `.agent/HANDOFF.md` — sections: Current stage, Done, Next step, Do not touch
+3. Commit `.agent/` (message: `agent: handoff <stage>`)
+
+Full protocol: `AGENTS.md`
