@@ -2,7 +2,8 @@
 
 Git-native **память агентов** — handoff между Cursor IDE, Cloud Agent, Antigravity и Codex.
 
-📖 **Полная инструкция на русском:** [INSTRUCTION_RU.md](./INSTRUCTION_RU.md)
+📖 **Полная инструкция:** [INSTRUCTION_RU.md](./INSTRUCTION_RU.md)  
+📋 **Конспект диалога (для Claude / Antigravity):** [CONSPECT_RU.md](./CONSPECT_RU.md)
 
 **Layers included (0–3):** `.agent/` state, bootstrap, Cursor hooks, Cloud SDK orchestrator.  
 **Not included:** Bridge API (level 4).
